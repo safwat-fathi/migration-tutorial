@@ -62,7 +62,7 @@ npm run migration:run
 npm run migration:revert
 
 # Show migration status
-npm run typeorm -- migration:show -d ormconfig.ts
+npm run typeorm -- migration:show -d ./src/config/orm.config.ts
 ```
 
 ## Step-by-Step Guide
@@ -70,7 +70,7 @@ npm run typeorm -- migration:show -d ormconfig.ts
 1. **Project Setup**
    - Install NestJS and required dependencies
    - Configure TypeORM in app.module.ts
-   - Create ormconfig.ts
+   - Create orm.config.ts
 
 2. **Create Entity**
    - Define User entity with basic fields
@@ -91,7 +91,7 @@ npm run typeorm -- migration:show -d ormconfig.ts
 Update the following files with your database credentials:
 
 ```typescript
-// app.module.ts and ormconfig.ts
+// app.module.ts and orm.config.ts
 {
   type: 'postgres',
   host: 'localhost',

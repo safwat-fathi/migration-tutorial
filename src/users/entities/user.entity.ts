@@ -24,6 +24,9 @@ export class User {
   @Column()
   phone: string;
 
+  @Column({ nullable: false })
+  password: string;
+
   @CreateDateColumn()
   createdAt: Date;
 

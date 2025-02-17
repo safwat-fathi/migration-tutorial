@@ -5,7 +5,8 @@ import {config} from 'dotenv'
 config()
 
 const dbConfig: DataSourceOptions = {
-  type: process.env.DB_TYPE,
+  // type: process.env.DB_TYPE as "postgres" | "mysql" | "sqlite",
+  type: 'postgres',
   host: process.env.DB_HOST,
   port: +process.env.DB_PORT,
   database: process.env.DB_NAME,
@@ -15,7 +16,7 @@ const dbConfig: DataSourceOptions = {
   migrations: ['dist/migrations/*.js'],
   migrationsTableName: process.env.MIGRATIONS_TABLE_NAME,
   migrationsRun: true,
-	synchronize: false
+  synchronize: false,
 };
 
 const dataSource = new DataSource(dbConfig);
